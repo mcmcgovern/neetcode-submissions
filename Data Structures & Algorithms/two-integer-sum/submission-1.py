@@ -1,0 +1,14 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        complements = {}
+
+        # nums[i] + nums[j] == target
+        for i in range(len(nums)):
+            if nums[i] in complements:
+                return [complements[nums[i]], i]
+                
+            diff = target - nums[i]
+            complements[diff] = i
+
+            
+        # {6:0, 5:1}
